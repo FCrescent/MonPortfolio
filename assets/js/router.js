@@ -7,7 +7,8 @@ import { renderAbout } from './views/about.js';
 export function router() {
     const app = document.getElementById('app');
 
-    const path = window.location.pathname;
+    const basePath = 'MonPortfolio';
+    const path = window.location.pathname.includes(basePath) ? '/' : window.location.pathname;
 
     app.innerHTML = '';
 
@@ -18,7 +19,7 @@ export function router() {
             renderHome(app);
             break;
         case '/about':
-            renderHome(app);
+            renderAbout(app);
             break;
         default:
             app.innerHTML = '<h1>404 - Page Not Found</h1>';
