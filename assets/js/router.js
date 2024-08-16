@@ -8,8 +8,14 @@ export function router() {
     const app = document.getElementById('app');
 
     const basePath = 'MonPortfolio';
-    const path = window.location.pathname.includes(basePath) ? '/' : window.location.pathname;
+    const path = window.location.pathname;
+    
+    if (path.includes(basePath)) {
+        path = path.replace(basePath, '');
+    }
 
+
+    console.log(path);
     app.innerHTML = '';
 
     // Routage simple basé sur le chemin de l'URL
