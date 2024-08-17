@@ -8,7 +8,8 @@ export function router() {
     const app = document.getElementById('app');
 
     const basePath = 'MonPortfolio';
-    const path = window.location.pathname;
+        
+    let path = window.location.pathname;
     
     if (path.includes(basePath)) {
         path = path.replace(basePath, '');
